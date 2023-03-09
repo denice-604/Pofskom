@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DbConnect.cs" />
     <Compile Include="Model\Children.cs" />
     <Compile Include="Model\Deserts.cs" />
     <Compile Include="Model\Family.cs" />
