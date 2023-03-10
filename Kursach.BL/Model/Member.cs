@@ -2,6 +2,9 @@
 
 namespace Kursach.BL.Model
 {
+    /// <summary>
+    /// Member.
+    /// </summary>
     internal class Member
     {
         #region свойства
@@ -138,6 +141,13 @@ namespace Kursach.BL.Model
 
         #endregion
 
+        #region Entity
+
+        public Family Familys { get; set; }
+
+        public Membership Memberships { get; set; }
+
+        #endregion
         public Member() { }
 
     }

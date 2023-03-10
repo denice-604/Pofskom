@@ -51,13 +51,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DbConnect.cs" />
+    <Compile Include="MemberContext.cs" />
     <Compile Include="Model\Children.cs" />
     <Compile Include="Model\Deserts.cs" />
     <Compile Include="Model\Family.cs" />
     <Compile Include="Model\Member.cs" />
     <Compile Include="Model\Membership.cs" />
     <Compile Include="Model\Organization.cs" />
+    <Compile Include="Model\OrgPost.cs" />
+    <Compile Include="Model\Parent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
