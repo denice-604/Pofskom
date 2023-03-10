@@ -7,6 +7,16 @@ namespace Kursach.BL.Model
     {
         public int Id { get; set; }
         public DateTime DateJoin { get; set; }
-        public string Name { get; set; }
+        public Organization Organizations { get; set; }
+        public OrgPost Post { get; set; }
+        public DateTime Payment { get; set; }
+
+
+        public List<Deserts> Deserts { get; set; }
+
+        public Membership()
+        {
+        }
+
     }
 }
