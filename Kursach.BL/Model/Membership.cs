@@ -6,7 +6,7 @@ namespace Kursach.BL.Model
     /// <summary>
     /// Membership.
     /// </summary>
-    internal class Membership
+    public class Membership
     {
         /// <summary>
         /// Membership Id.
@@ -19,24 +19,19 @@ namespace Kursach.BL.Model
         public DateTime DateJoin { get; set; }
 
         /// <summary>
-        /// Organization.
-        /// </summary>
-        public Organization Organizations { get; set; }
-
-        /// <summary>
-        /// Member post in org.
-        /// </summary>
-        public OrgPost Post { get; set; }
-
-        /// <summary>
         /// Last due date for dues.
         /// </summary>
         public DateTime LastPayment { get; set; }
 
+        public OrgPost PostOrg { get; set; }
+
 
         #region Entity
-        public Member Members { get; set; }
-        public virtual List<Deserts> Deserts { get; set; }
+        public int MemberId { get; set; }
+
+        public Member Member { get; set; }
+
+        public  List<Deserts> Deserts { get; set; }
 
         #endregion
 

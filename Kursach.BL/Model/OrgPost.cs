@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Kursach.BL.Model
 {
-    internal class OrgPost
+    public class OrgPost
     {
+        public string Name { get; set; }
+
     }
 }

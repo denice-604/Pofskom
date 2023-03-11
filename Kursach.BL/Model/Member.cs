@@ -1,18 +1,19 @@
 ﻿using System;
+using System.Data.Entity;
 
 namespace Kursach.BL.Model
 {
     /// <summary>
     /// Member.
     /// </summary>
-    internal class Member
+    public class Member
     {
         #region свойства
 
         /// <summary>
         /// Member Id.
         /// </summary>
-        public int Id { get; }
+        public int Id { get; set; }
 
         #region стабильное
         /// <summary>
@@ -115,7 +116,7 @@ namespace Kursach.BL.Model
         /// <summary>
         /// Member photo title.
         /// </summary>
-        public string Photo { get; set; }
+        public byte[] Photo { get; set; }
 
         /// <summary>
         /// Member education.
@@ -145,10 +146,63 @@ namespace Kursach.BL.Model
 
         public Family Familys { get; set; }
 
-        public Membership Memberships { get; set; }
+        public Membership Membership { get; set; }
 
         #endregion
-        public Member() { }
+
+        public Member(int id, 
+                      string name, 
+                      string surename, 
+                      string patronymic, 
+                      bool gender, 
+                      string phoneNumber, 
+                      bool maritalStatus, 
+                      DateTime birthDate, 
+                      string numberHouseD, 
+                      string addressD, 
+                      string cityD, 
+                      string regionD, 
+                      string countryD, 
+                      string numberHouse, 
+                      string address, 
+                      string city, 
+                      string region, 
+                      string country, 
+                      string post, 
+                      byte[] photo, 
+                      string education, 
+                      string email, 
+                      string personalFileNumber, 
+                      string citizenship)
+        {
+            Id = id;
+            Name = name;
+            Surename = surename;
+            Patronymic = patronymic;
+            Gender = gender;
+            PhoneNumber = phoneNumber;
+            MaritalStatus = maritalStatus;
+            BirthDate = birthDate;
+            NumberHouseD = numberHouseD;
+            AddressD = addressD;
+            CityD = cityD;
+            RegionD = regionD;
+            CountryD = countryD;
+            NumberHouse = numberHouse;
+            Address = address;
+            City = city;
+            Region = region;
+            Country = country;
+            Post = post;
+            Photo = photo;
+            Education = education;
+            Email = email;
+            PersonalFileNumber = personalFileNumber;
+            Citizenship = citizenship;
+        }
+
+
+
 
     }
 }

@@ -6,7 +6,7 @@ namespace Kursach.BL.Model
     /// <summary>
     /// inf ab member family.
     /// </summary>
-    internal class Family
+    public class Family
     {
         /// <summary>
         /// Family Id.
@@ -25,8 +25,9 @@ namespace Kursach.BL.Model
 
         #region Entity
 
-        public Member Members { get; set; }
-        public virtual List<Children> Childrens { get; set; }
+        public int MemberId { get; set; }
+        public List<Children> Children { get; set; }
+        public Member Member { get; set; }
 
         #endregion 
 

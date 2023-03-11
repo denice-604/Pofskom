@@ -5,7 +5,7 @@ namespace Kursach.BL.Model
     /// <summary>
     /// Some member deserts
     /// </summary>
-    internal class Deserts
+    public class Deserts
     {
 
         #region свойства
@@ -32,7 +32,8 @@ namespace Kursach.BL.Model
 
         #region Entity
 
-        public Membership Membership { get; set; }
+        public int MembershipId { get; set; }
+        public Member Member { get; set; }
 
         #endregion
 

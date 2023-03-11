@@ -1,12 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Kursach.BL.Model
 {
     /// <summary>
     /// Member's child.
     /// </summary>
-    internal class Children
+    public class Children
     {
+        public int Id { get; set; }
         /// <summary>
         /// Child name.
         /// </summary>
@@ -29,6 +31,7 @@ namespace Kursach.BL.Model
 
         #region Entity
 
+        public int FamilyId { get; set; }
         public Family Family { get; set; }
 
         #endregion 
