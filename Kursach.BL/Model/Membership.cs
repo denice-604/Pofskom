@@ -23,6 +23,10 @@ namespace Kursach.BL.Model
         /// </summary>
         public DateTime LastPayment { get; set; }
 
+
+        /// <summary>
+        /// Member's post in org.
+        /// </summary>
         public OrgPost PostOrg { get; set; }
 
 
@@ -35,9 +39,20 @@ namespace Kursach.BL.Model
 
         #endregion
 
-        public Membership()
+        /// <summary>
+        /// Create new membership 
+        /// </summary>
+        /// <param name="id"> Membership Id. </param>
+        /// <param name="dateJoin"> Member date join. </param>
+        /// <param name="lastPayment"> Date member's last payment. </param>
+        /// <param name="postOrg"> Member's post in org. </param>
+        /// <exception cref="ArgumentNullException"> Null check. </exception>
+        public Membership(int id, DateTime dateJoin, DateTime lastPayment, OrgPost postOrg)
         {
+            Id = id;
+            DateJoin = dateJoin;
+            LastPayment = lastPayment;
+            PostOrg = postOrg ?? throw new ArgumentNullException(nameof(postOrg),"Member's post can't be null.");
         }
-
     }
 }

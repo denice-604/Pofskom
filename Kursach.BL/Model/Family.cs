@@ -29,10 +29,20 @@ namespace Kursach.BL.Model
         public List<Children> Children { get; set; }
         public Member Member { get; set; }
 
-        #endregion 
+        #endregion
 
-        public Family() { }
-
+        /// <summary>
+        /// Create new family.
+        /// </summary>
+        /// <param name="id"> Family Id </param>
+        /// <param name="mother"> Member's mom. </param>
+        /// <param name="father"> Member's dad. </param>
+        public Family(int id, Parent mother, Parent father)
+        {
+            Id = id;
+            Mother = mother;
+            Father = father;
+        }
 
     }
 }

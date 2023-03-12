@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data.Entity;
 
 namespace Kursach.BL.Model
 {
@@ -150,59 +149,85 @@ namespace Kursach.BL.Model
 
         #endregion
 
+
+        /// <summary>
+        /// Create new member.
+        /// </summary>
+        /// <param name="id"> Member Id. </param>
+        /// <param name="name"> Member name. </param>
+        /// <param name="surename"> Member surename. </param>
+        /// <param name="patronymic"> Member patrinymic. </param>
+        /// <param name="gender"> Member's gender. </param>
+        /// <param name="phoneNumber"> Members phone number. </param>
+        /// <param name="maritalStatus"> Mamber marital status. </param>
+        /// <param name="birthDate"> Member date birth. </param>
+        /// <param name="numberHouseD"> Member house nuber according to the document. </param>
+        /// <param name="addressD"> Member address accoding to the doc. </param>
+        /// <param name="cityD"> Member city accoding to the doc. </param>
+        /// <param name="regionD"> Member region accodeng to the doc. </param>
+        /// <param name="countryD"> Member country accoding to the doc. </param>
+        /// <param name="numberHouse"> Actual member's house number. </param>
+        /// <param name="address"> Actual Member address. </param>
+        /// <param name="city"> Actual Member city. </param>
+        /// <param name="region"> Actual member region. </param>
+        /// <param name="country"> Actual member region. </param>
+        /// <param name="post"> Member's post at work. </param>
+        /// <param name="photo"> Member's photo. </param>
+        /// <param name="education"> Member education. </param>
+        /// <param name="email"> Member email. </param>
+        /// <param name="personalFileNumber"> Member personal file number. </param>
+        /// <param name="citizenship"> Member's citizenship. </param>
+        /// <exception cref="ArgumentNullException"> Null check. </exception>
         public Member(int id, 
-                      string name, 
-                      string surename, 
-                      string patronymic, 
-                      bool gender, 
-                      string phoneNumber, 
-                      bool maritalStatus, 
-                      DateTime birthDate, 
-                      string numberHouseD, 
-                      string addressD, 
-                      string cityD, 
-                      string regionD, 
-                      string countryD, 
-                      string numberHouse, 
-                      string address, 
-                      string city, 
-                      string region, 
-                      string country, 
-                      string post, 
-                      byte[] photo, 
-                      string education, 
-                      string email, 
-                      string personalFileNumber, 
-                      string citizenship)
+            string name, 
+            string surename, 
+            string patronymic, 
+            bool gender, 
+            string phoneNumber, 
+            bool maritalStatus, 
+            DateTime birthDate, 
+            string numberHouseD, 
+            string addressD, 
+            string cityD, 
+            string regionD, 
+            string countryD, 
+            string numberHouse, 
+            string address, 
+            string city, 
+            string region, 
+            string country, 
+            string post, 
+            byte[] photo, 
+            string education, 
+            string email,
+            string personalFileNumber, 
+            string citizenship)
         {
             Id = id;
-            Name = name;
-            Surename = surename;
-            Patronymic = patronymic;
+            Name = name ?? throw new ArgumentNullException(nameof(name),"Member name can't be null.");
+            Surename = surename ?? throw new ArgumentNullException(nameof(surename),"Member surename can't be null.");
+            Patronymic = patronymic ?? throw new ArgumentNullException(nameof(patronymic), "Member patronymic can't be null.");
             Gender = gender;
-            PhoneNumber = phoneNumber;
+            PhoneNumber = phoneNumber ?? throw new ArgumentNullException(nameof(phoneNumber),"Member phone number can't be null.");
             MaritalStatus = maritalStatus;
             BirthDate = birthDate;
-            NumberHouseD = numberHouseD;
-            AddressD = addressD;
-            CityD = cityD;
-            RegionD = regionD;
-            CountryD = countryD;
-            NumberHouse = numberHouse;
-            Address = address;
-            City = city;
-            Region = region;
-            Country = country;
-            Post = post;
-            Photo = photo;
-            Education = education;
-            Email = email;
-            PersonalFileNumber = personalFileNumber;
-            Citizenship = citizenship;
+            NumberHouseD = numberHouseD ?? throw new ArgumentNullException(nameof(numberHouseD));
+            AddressD = addressD ?? throw new ArgumentNullException(nameof(addressD));
+            CityD = cityD ?? throw new ArgumentNullException(nameof(cityD));
+            RegionD = regionD ?? throw new ArgumentNullException(nameof(regionD));
+            CountryD = countryD ?? throw new ArgumentNullException(nameof(countryD));
+            NumberHouse = numberHouse ?? throw new ArgumentNullException(nameof(numberHouse));
+            Address = address ?? throw new ArgumentNullException(nameof(address));
+            City = city ?? throw new ArgumentNullException(nameof(city));
+            Region = region ?? throw new ArgumentNullException(nameof(region));
+            Country = country ?? throw new ArgumentNullException(nameof(country));
+            Post = post ?? throw new ArgumentNullException(nameof(post));
+            Photo = photo ?? throw new ArgumentNullException(nameof(photo));
+            Education = education ?? throw new ArgumentNullException(nameof(education));
+            Email = email ?? throw new ArgumentNullException(nameof(email));
+            PersonalFileNumber = personalFileNumber ?? throw new ArgumentNullException(nameof(personalFileNumber));
+            Citizenship = citizenship ?? throw new ArgumentNullException(nameof(citizenship));
         }
-
-
-
 
     }
 }

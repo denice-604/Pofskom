@@ -37,10 +37,20 @@ namespace Kursach.BL.Model
 
         #endregion
 
-        public Deserts()
+        /// <summary>
+        /// Add new Member desert.
+        /// </summary>
+        /// <param name="id"> Desert Id. </param>
+        /// <param name="desertTypes"> Desert type. </param>
+        /// <param name="note"> Expl of the desert. </param>
+        /// <param name="date"> Pick-up date. </param>
+        /// <exception cref="ArgumentNullException"> Null cexk. </exception>
+        public Deserts(int id, string desertTypes, string note, DateTime date)
         {
-
+            Id = id;
+            DesertTypes = desertTypes ?? throw new ArgumentNullException(nameof(desertTypes),"Deserts type can't be null.");
+            Note = note;
+            Date = date;
         }
-
     }
 }

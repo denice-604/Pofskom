@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Kursach.BL.Model
 {
+    /// <summary>
+    /// Inf ab member family
+    /// </summary>
     public class Parent
     {
         /// <summary>
@@ -38,5 +37,29 @@ namespace Kursach.BL.Model
         /// </summary>
         public int BirthDate { get; set; }
 
+        /// <summary>
+        /// Create new Parent.
+        /// </summary>
+        /// <param name="name"> Parent name. </param>
+        /// <param name="surename"> Parent surename. </param>
+        /// <param name="patronymic"> Parent patronymic. </param>
+        /// <param name="gender"> Parent gender. </param>
+        /// <param name="phoneNumber"> Parent's phone number. </param>
+        /// <param name="birthDate"> Parent birth date. </param>
+        /// <exception cref="ArgumentNullException"> Null check. </exception>
+        public Parent(string name, 
+            string surename, 
+            string patronymic, 
+            bool gender, 
+            string phoneNumber, 
+            int birthDate)
+        {
+            Name = name ?? throw new ArgumentNullException(nameof(name),"Parent's name can't be null.");
+            Surename = surename ?? throw new ArgumentNullException(nameof(surename),"Parent's surename can't be null.");
+            Patronymic = patronymic ?? throw new ArgumentNullException(nameof(patronymic), "Parent's patronymic can't be null.");
+            Gender = gender;
+            PhoneNumber = phoneNumber;
+            BirthDate = birthDate;
+        }
     }
 }

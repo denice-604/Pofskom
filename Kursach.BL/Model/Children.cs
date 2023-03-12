@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace Kursach.BL.Model
 {
@@ -39,7 +38,7 @@ namespace Kursach.BL.Model
         /// <summary>
         /// Create new child.
         /// </summary>
-        /// <param name="name">  </param>
+        /// <param name="name"> Kid name. </param>
         /// <param name="surename"></param>
         /// <param name="patronymic"></param>
         /// <param name="birthDate"></param>
