@@ -222,7 +222,7 @@ namespace Kursach.BL.Model
             Region = region ?? throw new ArgumentNullException(nameof(region));
             Country = country ?? throw new ArgumentNullException(nameof(country));
             Post = post ?? throw new ArgumentNullException(nameof(post));
-            Photo = photo ?? throw new ArgumentNullException(nameof(photo));
+            Photo = photo;
             Education = education ?? throw new ArgumentNullException(nameof(education));
             Email = email ?? throw new ArgumentNullException(nameof(email));
             PersonalFileNumber = personalFileNumber ?? throw new ArgumentNullException(nameof(personalFileNumber));

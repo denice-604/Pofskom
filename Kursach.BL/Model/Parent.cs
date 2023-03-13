@@ -38,6 +38,11 @@ namespace Kursach.BL.Model
         public int BirthDate { get; set; }
 
         /// <summary>
+        /// If parent Date of death.
+        /// </summary>
+        public int? DateDeath { get; set; } 
+
+        /// <summary>
         /// Create new Parent.
         /// </summary>
         /// <param name="name"> Parent name. </param>
@@ -46,13 +51,15 @@ namespace Kursach.BL.Model
         /// <param name="gender"> Parent gender. </param>
         /// <param name="phoneNumber"> Parent's phone number. </param>
         /// <param name="birthDate"> Parent birth date. </param>
+        /// <param name="DateDeath"> Date of death parent. </param>
         /// <exception cref="ArgumentNullException"> Null check. </exception>
         public Parent(string name, 
             string surename, 
             string patronymic, 
             bool gender, 
             string phoneNumber, 
-            int birthDate)
+            int birthDate,
+            int? dateDeath)
         {
             Name = name ?? throw new ArgumentNullException(nameof(name),"Parent's name can't be null.");
             Surename = surename ?? throw new ArgumentNullException(nameof(surename),"Parent's surename can't be null.");
@@ -60,6 +67,7 @@ namespace Kursach.BL.Model
             Gender = gender;
             PhoneNumber = phoneNumber;
             BirthDate = birthDate;
+            DateDeath = dateDeath;
         }
     }
 }

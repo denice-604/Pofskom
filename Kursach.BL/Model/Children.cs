@@ -39,10 +39,10 @@ namespace Kursach.BL.Model
         /// Create new child.
         /// </summary>
         /// <param name="name"> Kid name. </param>
-        /// <param name="surename"></param>
-        /// <param name="patronymic"></param>
-        /// <param name="birthDate"></param>
-        /// <exception cref="ArgumentNullException"></exception>
+        /// <param name="surename"> Kid surename. </param>
+        /// <param name="patronymic"> Kid patronymic. </param>
+        /// <param name="birthDate"> Kid birth date. </param>
+        /// <exception cref="ArgumentNullException">Null check. </exception>
         public Children(string name, string surename, string patronymic, DateTime birthDate)
         {
             Name = name ?? throw new ArgumentNullException(nameof(name),"Имя ребёнка не может быть NULL");

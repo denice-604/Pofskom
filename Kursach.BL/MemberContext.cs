@@ -17,8 +17,8 @@ namespace Kursach.BL
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Member>()
-                .HasOptional(c => c.Familys)
-                .WithOptionalPrincipal(o => o.Member);
+                        .HasOptional(c => c.Familys)
+                        .WithOptionalPrincipal(o => o.Member);
 
             modelBuilder.Entity<Member>()
                 .HasOptional(o => o.Membership)
