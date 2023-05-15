@@ -1,0 +1,57 @@
+﻿@page
+@model profkom.WEB.Pages.ShowMembersModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Список членства</title>
+</head>
+<body>
+    <h1>Список членства</h1>
+
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+    </style>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Имя</th>
+                <th>Должность</th>
+                <th>Цеховая орг.</th>
+                <th>Дата вступления</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach (var member in Model.members)
+                {
+                    <tr>
+                        <td>@member.FirstName @member.SecondName @member.ThirdName</td>
+                        <td>@member.PostW.Post</td>
+                        <td>@Model.DepartmentOnID(member.Memberships.OrganizationID)</td>
+                        <td>@member.Memberships.DateJoin.ToShortDateString()</td>
+                        <td>
+                            <form method="POST" action="/members/@member.Id">
+                                <input type="submit" value="Select">
+                            </form>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+
+    <a href="Main" class="btn btn-primary">Назад</a>
+</body>
+</html>
+

@@ -1,0 +1,196 @@
+﻿@page
+@model profkom.WEB.Pages.AddMemberModel
+
+@{
+    ViewData["Title"] = "Добавить данные в базу данных";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form method="post">
+    <div>
+        <label for="FirstName">Имя</label>
+        <input type="text" id="FirstName" name="FirstName">
+    </div>
+    <div>
+        <label for="LastName">Фамилия</label>
+        <input type="text" id="SecondName" name="SecondName">
+    </div>
+    <div>
+        <label for="ThirdName">Отчество</label>
+        <input type="text" id="ThirdName" name="ThirdName">
+    </div>
+    <div>
+        <label for="Gender">Пол</label>
+        <select id="Gender" name="Gender" asp-for="Gender">
+            <option value="true">Мужской</option>
+            <option value="false">Женский</option>
+        </select>
+    </div>
+        <div>
+        <label for="PhoneNumber">Номер телефона</label>
+        <input type="tel" id="PhoneNumber" name="PhoneNumber">
+    </div>
+    <div>
+        <label for="MaritalStatus">Пол</label>
+        <select id="MaritalStatus" name="MaritalStatus" asp-for="MaritalStatus">
+            <option value="true">Женат/замужем</option>
+            <option value="false">Холост/не замужем</option>
+        </select>
+    </div>
+    <div>
+        <label for="BirthDate">Дата рождения</label>
+        <input type="date" id="BirthDate" name="BirthDate" required>
+    </div>
+    <h2>Адрес по прописке</h2>
+    <div>
+        <label for="DocumetAddress_NumberHouse">Номер дома</label>
+        <input type="text" id="DocumetAddress_NumberHouse" name="DocumetAddress.NumberHouse">
+    </div>
+    <div>
+        <label for="DocumetAddress_Street">Улица</label>
+        <input type="text" id="DocumetAddress_Street" name="DocumetAddress.Street">
+    </div>
+    <div>
+        <label for="DocumetAddress_City">Город</label>
+        <input type="text" id="DocumetAddress_City" name="DocumetAddress.City">
+    </div>
+    <div>
+        <label for="DocumetAddress_Region">Регион</label>
+        <input type="text" id="DocumetAddress_Region" name="DocumetAddress.Region">
+    </div>
+    <div>
+        <label for="DocumetAddress_Country">Страна</label>
+        <input type="text" id="DocumetAddress_Country" name="DocumetAddress.Country">
+    </div>
+    <div>
+        <label for="DocumetAddress_ApartmentNumber">Номер квартиры</label>
+        <input type="text" id="DocumetAddress_ApartmentNumber" name="DocumetAddress.ApartmentNumber">
+    </div>
+    <div>
+        <label for="DocumetAddress_Postcode">Почтовый индекс</label>
+        <input type="text" id="DocumetAddress_Postcode" name="DocumetAddress.Postcode">
+    </div>
+
+    <!-- Форма для FactAddress -->
+    <h2>Реальный адрес</h2>
+    <div>
+        <label for="FactAddress_NumberHouse">Номер дома</label>
+        <input type="text" id="FactAddress_NumberHouse" name="FactAddress.NumberHouse">
+    </div>
+    <div>
+        <label for="FactAddress_Street">Улица</label>
+        <input type="text" id="FactAddress_Street" name="FactAddress.Street">
+    </div>
+    <div>
+        <label for="FactAddress_City">Город</label>
+        <input type="text" id="FactAddress_City" name="FactAddress.City">
+    </div>
+    <div>
+        <label for="FactAddress_Region">Регион</label>
+        <input type="text" id="FactAddress_Region" name="FactAddress.Region">
+    </div>
+    <div>
+        <label for="FactAddress_Country">Страна</label>
+        <input type="text" id="FactAddress_Country" name="FactAddress.Country">
+    </div>
+    <div>
+        <label for="FactAddress_ApartmentNumber">Номер квартиры</label>
+        <input type="text" id="FactAddress_ApartmentNumber" name="FactAddress.ApartmentNumber">
+    </div>
+    <div>
+        <label for="FactAddress_Postcode">Почтовый индекс</label>
+        <input type="text" id="FactAddress_Postcode" name="FactAddress.Postcode">
+    </div>
+    <button type="button" id="btnCopyAddress">Заполнить реальный адрес</button>
+
+    <script>
+        document.getElementById('btnCopyAddress').addEventListener('click', function () {
+            // Копирование значений из полей DocumetAddress в соответствующие поля FactAddress
+            document.getElementById('FactAddress_NumberHouse').value = document.getElementById('DocumetAddress_NumberHouse').value;
+            document.getElementById('FactAddress_Street').value = document.getElementById('DocumetAddress_Street').value;
+            document.getElementById('FactAddress_City').value = document.getElementById('DocumetAddress_City').value;
+            document.getElementById('FactAddress_Region').value = document.getElementById('DocumetAddress_Region').value;
+            document.getElementById('FactAddress_Country').value = document.getElementById('DocumetAddress_Country').value;
+            document.getElementById('FactAddress_ApartmentNumber').value = document.getElementById('DocumetAddress_ApartmentNumber').value;
+            document.getElementById('FactAddress_Postcode').value = document.getElementById('DocumetAddress_Postcode').value;
+        });
+    </script>
+    <div>
+        <label for="Department">Отдел на рабочем месте</label>
+        <input type="text" id="Department" name="PostW.Department">
+    </div>
+    <div>
+        <label for="Post">Должность на рабочем месте</label>
+        <input type="text" id="Post" name="PostW.Post">
+    </div>
+    <div>
+        <label for="Educations.EducationalInstitution">Образовательное учреждение</label>
+        <input type="text" id="Educations.EducationalInstitution" name="Educations.EducationalInstitution">
+    </div>
+    <div>
+        <label for="Educations.Speciality">Специальность</label>
+        <input type="text" id="Educations.Speciality" name="Educations.Speciality">
+    </div>
+    <div>
+        <label for="Educations.EndDate">Год окончания</label>
+    <input type="number" min="1900" max="2050" id="Educations.EndDate" name="Educations.EndDate">
+    </div>
+    <div>
+        <label for="Educations.Degree">Степень</label>
+        <input type="text" id="Educations.Degree" name="Educations.Degree">
+    </div>
+    <div>
+        <label for="Email">Email</label>
+        <input type="email" id="Email" name="Email">
+    </div>
+    <div>
+        <label for="NumberPersonalFile">Номер личного дела</label>
+        <input type="text" id="NumberPersonalFile" name="PersonalFiles.NumberPersonalFile">
+    </div>
+    <div>
+        <label for="Citizenship">Гражданство</label>
+        <input type="text" id="Citizenship" name="Citizenship">
+    </div>
+
+    <h2>Членство</h2>
+    <div>
+        <label for="DateJoin">Дата вступления</label>
+        <input type="date" id="DateJoin" name="Memberships.DateJoin">
+    </div>
+    <div>
+        <label for="LastPayment">Последняя оплата</label>
+        <input type="date" id="LastPayment" name="Memberships.LastPayment">
+    </div>
+    <div>
+        <label for="OrganizationID">Организация</label>
+        <select id="OrganizationID" name="Memberships.OrganizationID">
+            <option value="">Выберите организацию</option>
+            @foreach (var organization in Model.Organizations)
+            {
+                <option value="@organization.Id">@organization.Name</option>
+            }
+        </select>
+    </div>
+    <div>
+        <label for="PostOrgID">Должность</label>
+        <select id="PostOrgID" name="Memberships.PostOrgID">
+            <option value="">Выберите должность</option>
+            @foreach (var position in Model.Posts)
+            {
+                <option value="@position.Id">@position.Name</option>
+            }
+        </select>
+    </div>
+
+
+    <button type="submit">Добавить в базу данных</button>
+    <a href="Main" class="btn btn-primary">Назад</a>
+
+</form>
+
+
+@if (Model.Message != null)
+{
+    <p>@Model.Message</p>
+}

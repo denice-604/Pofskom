@@ -7,48 +7,29 @@ namespace Kursach.BL.Model
     /// </summary>
     public class Children
     {
-        public int Id { get; set; }
-        /// <summary>
-        /// Child name.
-        /// </summary>
-        public string Name { get; set; }
+        public string FirstName { get; set; }
 
         /// <summary>
         /// Child surename.
         /// </summary>
-        public string Surename { get; set; }
+        public string SecondName { get; set; }
 
         /// <summary>
         /// Child patronymic.
         /// </summary>
-        public string Patronymic { get; set; }
+        public string ThirdName { get; set; }
 
         /// <summary>
         /// Child birth date.
         /// </summary>
         public DateTime BirthDate { get; set; }
 
-        #region Entity
-
-        public int FamilyId { get; set; }
-        public Family Family { get; set; }
-
-        #endregion 
+        public string PhoneNumber { get; set; }
 
         /// <summary>
-        /// Create new child.
+        /// Some note.
         /// </summary>
-        /// <param name="name"> Kid name. </param>
-        /// <param name="surename"> Kid surename. </param>
-        /// <param name="patronymic"> Kid patronymic. </param>
-        /// <param name="birthDate"> Kid birth date. </param>
-        /// <exception cref="ArgumentNullException">Null check. </exception>
-        public Children(string name, string surename, string patronymic, DateTime birthDate)
-        {
-            Name = name ?? throw new ArgumentNullException(nameof(name),"Имя ребёнка не может быть NULL");
-            Surename = surename ?? throw new ArgumentNullException(nameof(surename),"Фамилия ребёнка не может быть NULL");
-            Patronymic = patronymic ?? throw new ArgumentNullException(nameof(patronymic),"Отчество ребёнка не может быть NULL");
-            BirthDate = birthDate;
-        }
+        public string Note { get; set; }
+
     }
 }

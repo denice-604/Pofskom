@@ -1,0 +1,26 @@
+﻿@page
+@model profkom.WEB.Pages.DepartListModel
+
+
+
+<h2>Список цехов</h2>
+
+<ul>
+    @foreach (var org in Model.Organizations)
+    {
+            <li>@org.Name</li>
+    }
+</ul>
+
+<h2>Добавить новый цех</h2>
+
+<form method="post">
+    <div>
+        <input type="text" id="Organization" name="Organization.Name" placeholder="Введите новый цех">
+    </div>
+    <button type="submit">Добавить</button>
+</form>
+
+<a href="Main" class="btn btn-primary">Назад</a>
+
+

@@ -1,0 +1,19 @@
+﻿@page
+@model profkom.WEB.Pages.personalAreaModel
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Личный кабинет</title>
+</head>
+<body>
+	<h1>User Info</h1>
+	<p><strong>Логин:</strong> @Model.user.Login</p>
+	<p><strong>Почта:</strong> @Model.user.Email</p>
+	<p><strong>Уровень доступа:</strong> @Model.user.Access</p>
+	<p><strong>Цех:</strong> @Model.user.Department</p>
+	<p><strong>Должность:</strong> @Model.user.Post</p>
+	<p><strong>Имя:</strong> @Model.user.Name</p>
+	<a href="main">Вернуться в меню</a>
+</body>
+</html>

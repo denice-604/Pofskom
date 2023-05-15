@@ -1,0 +1,24 @@
+﻿@page
+@model profkom.WEB.Pages.PostListModel
+@{
+}
+
+<h1>Список должностей</h1>
+
+<ul>
+    @foreach (var post in Model.Posts)
+    {
+            <li>@post.Name</li>
+    }
+</ul>
+
+<h2>Добавить новую должность</h2>
+
+<form method="post">
+    <div>
+        <input type="text" id="Post" name="Post.Name" placeholder="Введите новую должность">
+    </div>
+    <button type="submit">Добавить</button>
+</form>
+
+<a href="Main" class="btn btn-primary">Назад</a>

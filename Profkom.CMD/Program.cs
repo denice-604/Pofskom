@@ -1,28 +1,56 @@
-﻿using Kursach.BL.Model;
-using Kursach.BL;
+﻿using Kursach.BL.Controller;
 using System;
-
+using Kursach.BL.Controller.mocks;
 
 namespace Profkom.CMD
 {
     internal class Program
     {
         static void Main(string[] args)
-
-
         {
-            DateTime ae = new DateTime(2003, 12, 2);
-
-            Member Maksim = new Member(1, "Maksim", "Lonskii", "Huevii", false, "+375228", true, ae, "zaaz", "faaf", "asd", "asdf", "asfa", "asdasfas", "fffff", "dasdasd", "asdasdasf", "asfasffas", "asfasfasd", null, "asdas", "assss", "aas", "asfas");
 
 
-            // Создать объект контекста
-            MemberContext context = new MemberContext();
+            Session.StartSession();
 
-            // Вставить данные в таблицу Customers с помощью LINQ
-            context.Members.Add(Maksim);
+            Console.WriteLine("ahahaha");
 
-            context.SaveChanges();
+            if(Session.Posts.Count < 1) 
+            {
+                Console.WriteLine("");
+                Person.AddPostProfk();
+            }
+
+            if(Session.Organizations.Count < 1)
+            {
+                Console.WriteLine("");
+                Person.AddOrganization();
+            }
+            string ans;
+
+            Console.WriteLine("Wanna add new post? y/n: ");
+            while ((ans = Console.ReadLine()) == "Y" || ans == "y")
+            {
+                Person.AddPostProfk();
+                Console.WriteLine("Wanna add new post? y/n: ");
+            }
+
+            Console.WriteLine("Wanna add new organization?? y/n");
+            while ((ans = Console.ReadLine()) == "Y" || ans == "y")
+            {
+                Person.AddOrganization();
+                Console.WriteLine("Wanna add new organization?? y/n");
+            }
+            Console.Clear();
+            Console.WriteLine("Add new person? y/n");
+            while ((ans = Console.ReadLine()) == "Y" || ans == "y")
+            {
+                Person.AddPerson();
+                Console.Clear();
+                Console.WriteLine("Add new person? y/n");
+            }
+
+            
+
         }
     }
 }

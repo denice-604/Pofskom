@@ -1,0 +1,102 @@
+﻿@page
+@model profkom.WEB.Pages.UsersListModel
+@{
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Пользователи</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Пользователи</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Login</th>
+                <th>Password</th>
+                <th>Email</th>
+                <th>Access</th>
+                <th>Department</th>
+                <th>Post</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model.Users)
+            {
+                <tr>
+                    <td>@user.Login</td>
+                    <td>@user.Password</td>
+                    <td>@user.Email</td>
+                    <td>@user.Access</td>
+                    <td>@user.Department</td>
+                    <td>@user.Post</td>
+                    <td>@user.Name</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <h2>Создать нового пользователя</h2>
+
+    <form method="post" >
+        <div>
+            <label for="login">Логин:</label>
+            <input type="text" id="login" name="User.Login">
+        </div>
+        <div>
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="User.Password">
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="User.Email">
+        </div>
+        <div>
+            <label for="access">Доступ:</label>
+            <input type="number" id="access" name="User.Access">
+        </div>
+        <div>
+        <label for="OrganizationID">Цех</label>
+        <select id="OrganizationID" name="User.Department">
+            <option value="">Выберите цех</option>
+                @foreach (var organization in Model.Organizations)
+                {
+                    <option value="@organization.Name">@organization.Name</option>
+                }
+        </select>
+        </div>
+        <div>
+        <label for="PostOrgID">Должность</label>
+        <select id="PostOrgID" name="User.Post">
+            <option value="">Выберите должность</option>
+                @foreach (var position in Model.Posts)
+                {
+                    <option value="@position.Name">@position.Name</option>
+                }
+        </select>
+        </div>
+        <div>
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="User.Name">
+        </div>
+        <button type="submit">Создать</button>
+    </form>
+
+    <a href="Main" class="btn btn-primary">Назад</a>
+</body>
+</html>
