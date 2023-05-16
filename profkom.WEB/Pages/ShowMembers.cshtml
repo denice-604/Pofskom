@@ -17,7 +17,7 @@
         }
 
         th, td {
-            border: 1px solid black;
+            border: 1px solid purple;
             padding: 8px;
         }
     </style>
@@ -33,23 +33,48 @@
         </thead>
         <tbody>
             @{
-                foreach (var member in Model.members)
+                if (Model.members != null)
                 {
-                    <tr>
-                        <td>@member.FirstName @member.SecondName @member.ThirdName</td>
-                        <td>@member.PostW.Post</td>
-                        <td>@Model.DepartmentOnID(member.Memberships.OrganizationID)</td>
-                        <td>@member.Memberships.DateJoin.ToShortDateString()</td>
-                        <td>
+                    foreach (var member in Model.members)
+                    {
+                        <tr>
+                            <td>@member.FirstName @member.SecondName @member.ThirdName</td>
+                            <td>@member.PostW.Post</td>
+                            <td>@Model.DepartmentOnID(member.Memberships.OrganizationID)</td>
+                            <td>@member.Memberships.DateJoin.ToShortDateString()</td>
+                            @*<td>
                             <form method="POST" action="/members/@member.Id">
                                 <input type="submit" value="Select">
                             </form>
-                        </td>
-                    </tr>
+                        </td>*@
+                        </tr>
+                    }
                 }
             }
         </tbody>
     </table>
+    <form method="post">
+    <div class="form-group">
+        <button type="submit" name="action" value="namep" class="btn btn-primary">Сортировка по имени</button>
+    </div>
+    <div class="form-group">
+        <button type="submit" name="action" value="date" class="btn btn-primary">Сортировка по дате</button>
+    </div>
+
+        <div>
+            <input type="text" id="Name" name="Name" placeholder="Найти по имени">
+        </div>
+        <button type="submit"name="action" value="Name">Поиск</button>
+    </form>
+
+    <form method="post">
+        
+        <div class="form-group">
+            <button type="submit" name="action" value="action" class="btn btn-primary">Скачать в Exel</button>
+        </div>
+
+    </form>
+
 
     <a href="Main" class="btn btn-primary">Назад</a>
 </body>

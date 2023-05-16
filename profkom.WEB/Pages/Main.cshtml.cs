@@ -20,10 +20,7 @@ namespace profkom.WEB.Pages
             {
                 return RedirectToPage("ShowMembers");
             }
-            else if (action == "action2")
-            {
-                return RedirectToPage("Add");
-            }
+
             else if (action == "action3")
             {
                 return RedirectToPage("AddMember");
